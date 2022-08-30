@@ -37,6 +37,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D65554F28BE04F500E288B0 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2DF908C728BDD55D006360E5 /* AppDelegate.swift */,
+				2DF908C928BDD55D006360E5 /* SceneDelegate.swift */,
+				2DF908D228BDD55E006360E5 /* LaunchScreen.storyboard */,
+				2DF908D528BDD55E006360E5 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2D65555028BE050300E288B0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2DF908D028BDD55E006360E5 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2D65555128BE051200E288B0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2D65554828BDF89900E288B0 /* CityWeatherViewController.swift */,
+				2D65554A28BDF8DE00E288B0 /* CityWeatherView.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		2DF908BB28BDD55D006360E5 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +84,9 @@
 		2DF908C628BDD55D006360E5 /* wanted-pre-onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				2DF908C728BDD55D006360E5 /* AppDelegate.swift */,
-				2DF908C928BDD55D006360E5 /* SceneDelegate.swift */,
-				2D65554828BDF89900E288B0 /* CityWeatherViewController.swift */,
-				2D65554A28BDF8DE00E288B0 /* CityWeatherView.swift */,
-				2DF908D028BDD55E006360E5 /* Assets.xcassets */,
-				2DF908D228BDD55E006360E5 /* LaunchScreen.storyboard */,
-				2DF908D528BDD55E006360E5 /* Info.plist */,
+				2D65554F28BE04F500E288B0 /* Application */,
+				2D65555028BE050300E288B0 /* Resource */,
+				2D65555128BE051200E288B0 /* Source */,
 			);
 			path = "wanted-pre-onboarding";
 			sourceTree = "<group>";
@@ -281,7 +305,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U3443QN3X7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "wanted-pre-onboarding/Info.plist";
+				INFOPLIST_FILE = "wanted-pre-onboarding/Application/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -308,7 +332,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U3443QN3X7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "wanted-pre-onboarding/Info.plist";
+				INFOPLIST_FILE = "wanted-pre-onboarding/Application/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
