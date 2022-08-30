@@ -30,6 +30,7 @@ final class CityWeatherView: UIView {
         let collectionView = UICollectionView(frame: self.bounds,
                                               collectionViewLayout: layout)
         collectionView.backgroundColor = .systemBackground
+        collectionView.register(CityWeatherCollectionViewCell.self, forCellWithReuseIdentifier: "CityWeatherCell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
