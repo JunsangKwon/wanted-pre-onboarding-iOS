@@ -29,7 +29,7 @@ final class CityWeatherView: UIView {
 
         let collectionView = UICollectionView(frame: self.bounds,
                                               collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .secondarySystemBackground
         collectionView.register(CityWeatherCollectionViewCell.self, forCellWithReuseIdentifier: "CityWeatherCell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -46,7 +46,7 @@ final class CityWeatherView: UIView {
     }
     
     private func setLayouts() {
-        self.backgroundColor = .systemBackground
+        self.backgroundColor = .secondarySystemBackground
         setViewHierarchy()
         setConstraints()
     }
@@ -63,7 +63,7 @@ final class CityWeatherView: UIView {
         titleLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20).isActive = true
         
-        collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15).isActive = true
+        collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true

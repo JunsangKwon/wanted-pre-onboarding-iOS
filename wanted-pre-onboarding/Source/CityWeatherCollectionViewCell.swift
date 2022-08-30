@@ -14,12 +14,13 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         label.text = "공주시"
         label.textColor = .black
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 15, weight: .semibold)
+        label.font = .systemFont(ofSize: 17, weight: .bold)
         return label
     }()
     
     let weatherIconImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "unknown")
         return imageView
     }()
     
@@ -36,12 +37,13 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         label.text = "19°C"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.font = .systemFont(ofSize: 25, weight: .light)
         return label
     }()
     
     let humidityImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "humidity")
         return imageView
     }()
     
@@ -50,7 +52,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         label.text = "50%"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.font = .systemFont(ofSize: 13, weight: .light)
         return label
     }()
     
@@ -66,7 +68,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         return stackView
     }()
 
@@ -81,8 +83,15 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
     }
 
     private func setLayouts() {
+        setProperties()
         setViewHierarchy()
         setConstraints()
+    }
+    
+    private func setProperties() {
+        self.backgroundColor = .systemBackground
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
     }
 
     private func setViewHierarchy() {
@@ -106,10 +115,12 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         leftStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         leftStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         leftStackView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        leftStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         
         rightStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         rightStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
         rightStackView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        rightStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         
         weatherIconImageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
         weatherIconImageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
