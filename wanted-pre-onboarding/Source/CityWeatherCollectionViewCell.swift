@@ -11,7 +11,6 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
 
     let cityNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "공주시"
         label.textColor = .black
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 17, weight: .bold)
@@ -28,13 +27,12 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .leading
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         return stackView
     }()
     
     let temperatureLabel: UILabel = {
         let label = UILabel()
-        label.text = "19°C"
         label.textColor = .black
         label.textAlignment = .right
         label.font = .systemFont(ofSize: 25, weight: .light)
@@ -49,10 +47,9 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
     
     let humidityLabel: UILabel = {
         let label = UILabel()
-        label.text = "50%"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 13, weight: .light)
+        label.font = .systemFont(ofSize: 14, weight: .light)
         return label
     }()
     
@@ -69,6 +66,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill
+        stackView.spacing = 7
         return stackView
     }()
 
@@ -80,6 +78,21 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
     @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cityNameLabel.text = ""
+        weatherIconImageView.image = nil
+        temperatureLabel.text = ""
+        humidityLabel.text = ""
+    }
+    
+    public func setData(info: WeatherEntity) {
+        cityNameLabel.text = info.name
+        weatherIconImageView.image = UIImage(named: info.icon)
+        temperatureLabel.text = "\(info.temp)°C"
+        humidityLabel.text = "\(info.humidity)%"
     }
 
     private func setLayouts() {
@@ -108,18 +121,18 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
     }
 
     private func setConstraints() {
-        [leftStackView, rightStackView].forEach {
+        [leftStackView, rightStackView, weatherIconImageView, humidityImageView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
         leftStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         leftStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        leftStackView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        leftStackView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         leftStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         
         rightStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         rightStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
-        rightStackView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        rightStackView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         rightStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         
         weatherIconImageView.widthAnchor.constraint(equalToConstant: 35).isActive = true

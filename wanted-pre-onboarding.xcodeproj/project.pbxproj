@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1EEAA428C0A6130069B841 /* WeatherEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EEAA328C0A6130069B841 /* WeatherEntity.swift */; };
 		2D65554928BDF89900E288B0 /* CityWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65554828BDF89900E288B0 /* CityWeatherViewController.swift */; };
 		2D65554B28BDF8DE00E288B0 /* CityWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65554A28BDF8DE00E288B0 /* CityWeatherView.swift */; };
 		2D65555328BE0A2500E288B0 /* CityWeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65555228BE0A2500E288B0 /* CityWeatherCollectionViewCell.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D1EEAA328C0A6130069B841 /* WeatherEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEntity.swift; sourceTree = "<group>"; };
 		2D65554828BDF89900E288B0 /* CityWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherViewController.swift; sourceTree = "<group>"; };
 		2D65554A28BDF8DE00E288B0 /* CityWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherView.swift; sourceTree = "<group>"; };
 		2D65555228BE0A2500E288B0 /* CityWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				2D8F48E728BF9C420031B2DC /* NetworkResult.swift */,
 				2D8F48EC28BF9EA80031B2DC /* NetworkService.swift */,
 				2D8F48EE28BFA53A0031B2DC /* WeatherDTO.swift */,
+				2D1EEAA328C0A6130069B841 /* WeatherEntity.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				2DF908C828BDD55D006360E5 /* AppDelegate.swift in Sources */,
 				2D65554928BDF89900E288B0 /* CityWeatherViewController.swift in Sources */,
 				2D8F48ED28BF9EA80031B2DC /* NetworkService.swift in Sources */,
+				2D1EEAA428C0A6130069B841 /* WeatherEntity.swift in Sources */,
 				2DF908CA28BDD55D006360E5 /* SceneDelegate.swift in Sources */,
 				2D65554B28BDF8DE00E288B0 /* CityWeatherView.swift in Sources */,
 				2D65555928BE37B800E288B0 /* UIStackView+Extension.swift in Sources */,
