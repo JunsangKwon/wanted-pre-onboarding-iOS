@@ -10,7 +10,10 @@ import UIKit
 final class CityWeatherViewController: UIViewController {
     
     let cityWeatherView = CityWeatherView()
-    let cityNameList = ["Gongju", "Gwangju", "Gumi", "Gunsan", "Daegu", "Daejeon", "Mokpo", "Busan", "Seosan", "Seoul", "Sokcho", "Suwon", "Suncheon", "Ulsan", "Iksan", "Jeonju", "Jeju", "Cheonan", "Cheongju-si", "Chuncheon"]
+    let cityNameDic: [String : String] = ["Gongju": "공주시", "Gwangju": "광주광역시", "Gumi": "구미시", "Gunsan": "군산시", "Daegu": "대구시", "Daejeon": "대전광역시", "Mokpo": "목포시", "Busan": "부산광역시", "Seosan": "서산시", "Seoul": "서울특별시", "Sokcho": "속초시", "Suwon": "수원시", "Suncheon": "순천시", "Ulsan": "울산시", "Iksan": "익산시", "Jeonju": "전주시", "Jeju": "제주특별시", "Cheonan": "천안시", "Cheongju": "청주시", "Chuncheon":"춘천시"]
+    var weatherList: [WeatherEntity] = []
+    let spinner = UIActivityIndicatorView()
+    
     
     override func loadView() {
         self.view = cityWeatherView
@@ -19,35 +22,29 @@ final class CityWeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCollectionView()
+        getCityWeatherInfo()
     }
     
     private func registerCollectionView() {
         cityWeatherView.collectionView.delegate = self
         cityWeatherView.collectionView.dataSource = self
     }
-}
 
-extension CityWeatherViewController {
-    func getCityWeatherInfo() {
-        for i in 0..<cityNameList.count {
-            NetworkService.shared.getWeatherInfo(cityName: cityNameList[i]) { [weak self] result in
-                switch result {
-                case .success(let response):
-                    guard let data = response as? WeatherDTO else { return }
-                    let weatherInfo = WeatherEntity(description: data.weather.first?.weatherDescription ?? "",
-                                                    icon: data.weather.first?.icon ?? "unknown",
-                                                    temp: data.main.temp,
-                                                    feelLikeTemp: data.main.feelsLike,
-                                                    maxTemp: data.main.tempMax,
-                                                    minTemp: data.main.tempMin,
-                                                    pressure: data.main.pressure,
-                                                    humidity: data.main.humidity,
-                                                    windSpeed: data.wind.speed,
-                                                    name: data.name)
-                    
-                default:
-                    print("API error")
+    private func getCityWeatherInfo() {
+        Task {
+            spinner.startAnimating()
+            for (key, value) in cityNameDic {
+                do {
+                    var data = try await NetworkService.shared.getWeatherInfo(cityName: key)
+                    data.koreaName = value
+                    self.weatherList.append(data)
+                } catch {
+                    print(error.localizedDescription)
                 }
+            }
+            await MainActor.run {
+                self.weatherList.sort(by: {$0.koreaName! < $1.koreaName!})
+                self.cityWeatherView.collectionView.reloadData()
             }
         }
     }
@@ -55,36 +52,14 @@ extension CityWeatherViewController {
 
 extension CityWeatherViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return weatherList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityWeatherCell", for: indexPath) as? CityWeatherCollectionViewCell
         else { return UICollectionViewCell() }
         
-        let cityName = cityNameList[indexPath.item]
-        NetworkService.shared.getWeatherInfo(cityName: cityName) { result in
-            switch result {
-            case .success(let response):
-                guard let data = response as? WeatherDTO else { return }
-                let weatherInfo = WeatherEntity(description: data.weather.first?.weatherDescription ?? "",
-                                                icon: data.weather.first?.icon ?? "unknown",
-                                                temp: data.main.temp,
-                                                feelLikeTemp: data.main.feelsLike,
-                                                maxTemp: data.main.tempMax,
-                                                minTemp: data.main.tempMin,
-                                                pressure: data.main.pressure,
-                                                humidity: data.main.humidity,
-                                                windSpeed: data.wind.speed,
-                                                name: data.name)
-                DispatchQueue.main.async {
-                    cell.setData(info: weatherInfo)
-                }
-            default:
-                print("API error")
-            }
-        }
-        
+        cell.setData(info: self.weatherList[indexPath.item])
         return cell
     }
     

@@ -89,7 +89,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
     }
     
     public func setData(info: WeatherEntity) {
-        cityNameLabel.text = info.name
+        cityNameLabel.text = info.koreaName
         weatherIconImageView.image = UIImage(named: info.icon)
         temperatureLabel.text = "\(info.temp)°C"
         humidityLabel.text = "\(info.humidity)%"
@@ -121,7 +121,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
     }
 
     private func setConstraints() {
-        [leftStackView, rightStackView, weatherIconImageView, humidityImageView].forEach {
+        [leftStackView, rightStackView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         

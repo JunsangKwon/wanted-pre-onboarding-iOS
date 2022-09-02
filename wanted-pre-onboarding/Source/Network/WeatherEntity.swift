@@ -17,5 +17,5 @@ struct WeatherEntity {
     var pressure: Int
     var humidity: Int
     var windSpeed: Double
-    var name: String
+    var koreaName: String?
 }
