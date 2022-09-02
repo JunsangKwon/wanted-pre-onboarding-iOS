@@ -9,11 +9,9 @@ import UIKit
 
 final class CityWeatherViewController: UIViewController {
     
-    let cityWeatherView = CityWeatherView()
     let cityNameDic: [String : String] = ["Gongju": "공주시", "Gwangju": "광주광역시", "Gumi": "구미시", "Gunsan": "군산시", "Daegu": "대구시", "Daejeon": "대전광역시", "Mokpo": "목포시", "Busan": "부산광역시", "Seosan": "서산시", "Seoul": "서울특별시", "Sokcho": "속초시", "Suwon": "수원시", "Suncheon": "순천시", "Ulsan": "울산시", "Iksan": "익산시", "Jeonju": "전주시", "Jeju": "제주특별시", "Cheonan": "천안시", "Cheongju": "청주시", "Chuncheon":"춘천시"]
+    let cityWeatherView = CityWeatherView()
     var weatherList: [WeatherEntity] = []
-    let spinner = UIActivityIndicatorView()
-    
     
     override func loadView() {
         self.view = cityWeatherView
@@ -32,7 +30,6 @@ final class CityWeatherViewController: UIViewController {
 
     private func getCityWeatherInfo() {
         Task {
-            spinner.startAnimating()
             for (key, value) in cityNameDic {
                 do {
                     var data = try await NetworkService.shared.getWeatherInfo(cityName: key)

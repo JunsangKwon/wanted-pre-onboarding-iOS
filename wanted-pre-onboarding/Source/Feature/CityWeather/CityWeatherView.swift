@@ -52,8 +52,7 @@ final class CityWeatherView: UIView {
     }
     
     private func setViewHierarchy() {
-        addSubview(titleLabel)
-        addSubview(collectionView)
+        addSubviews(titleLabel, collectionView)
     }
 
     private func setConstraints() {
