@@ -14,7 +14,7 @@ class DetailInfoView: UIView {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .fillProportionally
-        stackView.spacing = 20
+        stackView.spacing = 12
         return stackView
     }()
     
@@ -22,7 +22,7 @@ class DetailInfoView: UIView {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.font = .systemFont(ofSize: 15, weight: .semibold)
         return label
     }()
     

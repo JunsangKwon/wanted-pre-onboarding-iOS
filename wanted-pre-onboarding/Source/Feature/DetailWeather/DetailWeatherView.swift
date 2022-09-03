@@ -49,7 +49,7 @@ final class DetailWeatherView: UIView {
         label.text = "\(weatherInfo.temp)°"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 40, weight: .light)
+        label.font = .systemFont(ofSize: 45, weight: .light)
         return label
     }()
     
@@ -111,7 +111,7 @@ final class DetailWeatherView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fillEqually
-        stackView.spacing = 7
+        stackView.spacing = 5
         return stackView
     }()
     
@@ -155,7 +155,7 @@ final class DetailWeatherView: UIView {
     private func setViewHierarchy() {
         addSubviews(mainStackView, extraInfoView)
         mainStackView.addArrangedSubviews(cityNameLabel,descriptionLabel, weatherIconImageView, temperatureLabel, temparatureStackView)
-        temparatureStackView.addArrangedSubviews(maxTemperatureLabel, maxTemperatureValueLabel, minTemperatureLabel, minTemperatureValueLabel)
+        temparatureStackView.addArrangedSubviews(maxTemperatureLabel, maxTemperatureValueLabel, Spacer(10), minTemperatureLabel, minTemperatureValueLabel)
         extraInfoView.addSubview(detailInfoStackView)
         detailInfoStackView.addArrangedSubviews(feelLikeInfoView, airPressureInfoView, humidityInfoView, windSpeedInfoView)
     }

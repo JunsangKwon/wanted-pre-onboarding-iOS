@@ -9,8 +9,18 @@ import UIKit
 
 final class DetailWeatherViewController: UIViewController {
     
-    let detailWeatherView = DetailWeatherView(weatherInfo: WeatherEntity(description: "맑음", icon: "01d", temp: 20.23, feelLikeTemp: 20.21, maxTemp: 29.1, minTemp: 23.2, pressure: 1015, humidity: 58, windSpeed: 3.09, koreaName: "서울특별시"))
+    var weatherInfo: WeatherEntity
+    lazy var detailWeatherView = DetailWeatherView(weatherInfo: self.weatherInfo)
     
+    init(weatherInfo: WeatherEntity){
+        self.weatherInfo = weatherInfo
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func loadView() {
         self.view = detailWeatherView
     }

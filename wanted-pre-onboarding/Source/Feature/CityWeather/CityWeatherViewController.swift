@@ -64,4 +64,8 @@ extension CityWeatherViewController: UICollectionViewDelegate, UICollectionViewD
         return CGSize(width: collectionView.frame.width - 60 , height: 90)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailWeatherViewController(weatherInfo: weatherList[indexPath.item])
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }

@@ -9,16 +9,6 @@ import UIKit
 
 final class CityWeatherView: UIView {
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "날씨"
-        label.textColor = .black
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 25, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -29,7 +19,7 @@ final class CityWeatherView: UIView {
 
         let collectionView = UICollectionView(frame: self.bounds,
                                               collectionViewLayout: layout)
-        collectionView.backgroundColor = .secondarySystemBackground
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(CityWeatherCollectionViewCell.self, forCellWithReuseIdentifier: "CityWeatherCell")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -46,23 +36,19 @@ final class CityWeatherView: UIView {
     }
     
     private func setLayouts() {
-        self.backgroundColor = .secondarySystemBackground
+        self.backgroundColor = .systemBackground
         setViewHierarchy()
         setConstraints()
     }
     
     private func setViewHierarchy() {
-        addSubviews(titleLabel, collectionView)
+        addSubview(collectionView)
     }
 
     private func setConstraints() {
         let safeArea = self.safeAreaLayoutGuide
         
-        titleLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20).isActive = true
-        
-        collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+        collectionView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
