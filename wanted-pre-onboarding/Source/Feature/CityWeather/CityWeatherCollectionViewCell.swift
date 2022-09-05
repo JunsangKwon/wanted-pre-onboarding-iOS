@@ -11,7 +11,7 @@ final class CityWeatherCollectionViewCell: UICollectionViewCell {
 
     private let cityNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .left
         label.font = .normalBoldFont
         return label
@@ -32,7 +32,7 @@ final class CityWeatherCollectionViewCell: UICollectionViewCell {
     
     private let temperatureLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .right
         label.font = .titleFont
         return label
@@ -46,7 +46,7 @@ final class CityWeatherCollectionViewCell: UICollectionViewCell {
     
     private let humidityLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .right
         label.font = .smallFont
         return label

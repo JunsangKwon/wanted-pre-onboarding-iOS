@@ -23,7 +23,7 @@ final class DetailWeatherView: UIView {
     private lazy var cityNameLabel: UILabel = {
         let label = UILabel()
         label.text = weatherInfo.koreaName
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .left
         label.font = .titleBoldFont
         return label
@@ -32,7 +32,7 @@ final class DetailWeatherView: UIView {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = weatherInfo.description
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .right
         label.font = .mediumFont
         return label
@@ -46,7 +46,7 @@ final class DetailWeatherView: UIView {
     private lazy var temperatureLabel: UILabel = {
         let label = UILabel()
         label.text = "\(weatherInfo.temp)°"
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .right
         label.font = .bigFont
         return label
@@ -64,7 +64,7 @@ final class DetailWeatherView: UIView {
     private let maxTemperatureLabel: UILabel = {
         let label = UILabel()
         label.text = "최고 :"
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .right
         label.font = .normalFont
         return label
@@ -73,7 +73,7 @@ final class DetailWeatherView: UIView {
     private lazy var maxTemperatureValueLabel: UILabel = {
         let label = UILabel()
         label.text = "\(weatherInfo.maxTemp)°"
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .right
         label.font = .normalFont
         return label
@@ -82,7 +82,7 @@ final class DetailWeatherView: UIView {
     private let minTemperatureLabel: UILabel = {
         let label = UILabel()
         label.text = "최저 :"
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .right
         label.font = .normalFont
         return label
@@ -91,7 +91,7 @@ final class DetailWeatherView: UIView {
     private lazy var minTemperatureValueLabel: UILabel = {
         let label = UILabel()
         label.text = "\(weatherInfo.minTemp)°"
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .right
         label.font = .normalFont
         return label

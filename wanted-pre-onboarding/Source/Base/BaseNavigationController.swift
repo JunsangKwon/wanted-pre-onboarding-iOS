@@ -12,7 +12,7 @@ final class BaseNavigationController: UINavigationController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "날씨"
-        label.textColor = .black
+        label.textColor = .systemColor
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 25, weight: .bold)
         return label
@@ -35,7 +35,7 @@ final class BaseNavigationController: UINavigationController {
                                          transitionMaskImage: backButtonImage)
         appearance.shadowColor = nil
         
-        navigationBar.tintColor = UIColor.black
+        navigationBar.tintColor = UIColor.systemColor
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
         navigationBar.compactAppearance = appearance
