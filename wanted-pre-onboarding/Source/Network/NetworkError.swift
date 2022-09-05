@@ -13,4 +13,5 @@ enum NetworkError: Error {
     case decodedErr
     case invalidErr
     case networkFail
+    case imageCacheErr
 }

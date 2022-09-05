@@ -90,7 +90,6 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
     
     public func setData(info: WeatherEntity) {
         cityNameLabel.text = info.koreaName
-        weatherIconImageView.image = UIImage(named: info.icon)
         temperatureLabel.text = "\(info.temp)°C"
         humidityLabel.text = "\(info.humidity)%"
     }
@@ -135,8 +134,8 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         rightStackView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         rightStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         
-        weatherIconImageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
-        weatherIconImageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        weatherIconImageView.widthAnchor.constraint(equalToConstant: 45).isActive = true
+        weatherIconImageView.heightAnchor.constraint(equalToConstant: 45).isActive = true
         
         humidityImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
         humidityImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true

@@ -40,7 +40,6 @@ final class DetailWeatherView: UIView {
     
     lazy var weatherIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: weatherInfo.icon)
         return imageView
     }()
     
@@ -148,8 +147,15 @@ final class DetailWeatherView: UIView {
     
     private func setLayouts() {
         self.backgroundColor = .systemBackground
+        setImageCache()
         setViewHierarchy()
         setConstraints()
+    }
+    
+    private func setImageCache() {
+        Task {
+            try await weatherIconImageView.setImage(weatherInfo.icon)
+        }
     }
     
     private func setViewHierarchy() {

@@ -56,7 +56,12 @@ extension CityWeatherViewController: UICollectionViewDelegate, UICollectionViewD
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityWeatherCell", for: indexPath) as? CityWeatherCollectionViewCell
         else { return UICollectionViewCell() }
         
-        cell.setData(info: self.weatherList[indexPath.item])
+        Task {
+            let iconName = weatherList[indexPath.item].icon
+            try await cell.weatherIconImageView.setImage(iconName)
+            
+            cell.setData(info: weatherList[indexPath.item])
+        }
         return cell
     }
     
