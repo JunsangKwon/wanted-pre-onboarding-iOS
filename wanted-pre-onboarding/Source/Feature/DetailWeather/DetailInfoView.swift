@@ -22,7 +22,7 @@ class DetailInfoView: UIView {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 15, weight: .semibold)
+        label.font = .smallBoldFont
         return label
     }()
     
@@ -30,7 +30,7 @@ class DetailInfoView: UIView {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.font = .smallFont
         return label
     }()
     

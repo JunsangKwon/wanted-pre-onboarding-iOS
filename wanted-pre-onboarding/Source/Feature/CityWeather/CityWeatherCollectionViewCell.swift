@@ -13,7 +13,7 @@ final class CityWeatherCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .normalBoldFont
         return label
     }()
     
@@ -34,7 +34,7 @@ final class CityWeatherCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 25, weight: .light)
+        label.font = .titleFont
         return label
     }()
     
@@ -48,7 +48,7 @@ final class CityWeatherCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.font = .smallFont
         return label
     }()
     

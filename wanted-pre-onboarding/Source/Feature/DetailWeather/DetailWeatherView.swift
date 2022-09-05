@@ -25,7 +25,7 @@ final class DetailWeatherView: UIView {
         label.text = weatherInfo.koreaName
         label.textColor = .black
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 25, weight: .bold)
+        label.font = .titleBoldFont
         return label
     }()
     
@@ -34,7 +34,7 @@ final class DetailWeatherView: UIView {
         label.text = weatherInfo.description
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 20, weight: .light)
+        label.font = .mediumFont
         return label
     }()
     
@@ -48,7 +48,7 @@ final class DetailWeatherView: UIView {
         label.text = "\(weatherInfo.temp)°"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 45, weight: .light)
+        label.font = .bigFont
         return label
     }()
     
@@ -66,7 +66,7 @@ final class DetailWeatherView: UIView {
         label.text = "최고 :"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 17, weight: .light)
+        label.font = .normalFont
         return label
     }()
     
@@ -75,7 +75,7 @@ final class DetailWeatherView: UIView {
         label.text = "\(weatherInfo.maxTemp)°"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 17, weight: .light)
+        label.font = .normalFont
         return label
     }()
     
@@ -84,7 +84,7 @@ final class DetailWeatherView: UIView {
         label.text = "최저 :"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 17, weight: .light)
+        label.font = .normalFont
         return label
     }()
     
@@ -93,7 +93,7 @@ final class DetailWeatherView: UIView {
         label.text = "\(weatherInfo.minTemp)°"
         label.textColor = .black
         label.textAlignment = .right
-        label.font = .systemFont(ofSize: 17, weight: .light)
+        label.font = .normalFont
         return label
     }()
     

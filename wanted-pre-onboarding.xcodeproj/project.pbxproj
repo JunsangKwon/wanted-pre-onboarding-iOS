@@ -25,6 +25,7 @@
 		2DF1829728C5ACB0002F5641 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1829628C5ACB0002F5641 /* UIImageView+Extension.swift */; };
 		2DF1829928C5C2ED002F5641 /* ApiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DF1829828C5C2ED002F5641 /* ApiKey.plist */; };
 		2DF1829B28C5C639002F5641 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1829A28C5C639002F5641 /* Bundle+Extension.swift */; };
+		2DF1829D28C5D0E9002F5641 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF1829C28C5D0E9002F5641 /* UIFont+Extension.swift */; };
 		2DF908C828BDD55D006360E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF908C728BDD55D006360E5 /* AppDelegate.swift */; };
 		2DF908CA28BDD55D006360E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF908C928BDD55D006360E5 /* SceneDelegate.swift */; };
 		2DF908D128BDD55E006360E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DF908D028BDD55E006360E5 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		2DF1829628C5ACB0002F5641 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		2DF1829828C5C2ED002F5641 /* ApiKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKey.plist; sourceTree = "<group>"; };
 		2DF1829A28C5C639002F5641 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		2DF1829C28C5D0E9002F5641 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		2DF908C428BDD55D006360E5 /* wanted-pre-onboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wanted-pre-onboarding.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF908C728BDD55D006360E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DF908C928BDD55D006360E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				2DF1829628C5ACB0002F5641 /* UIImageView+Extension.swift */,
 				2D65555A28BE37F700E288B0 /* UIView+Extension.swift */,
 				2DF1829A28C5C639002F5641 /* Bundle+Extension.swift */,
+				2DF1829C28C5D0E9002F5641 /* UIFont+Extension.swift */,
 				2DF00F3F28C343FB00D9D7E9 /* Spacer.swift */,
 			);
 			path = Util;
@@ -276,6 +279,7 @@
 				2D65554B28BDF8DE00E288B0 /* CityWeatherView.swift in Sources */,
 				2D24DDF728C1D6EF00F4FA06 /* NetworkError.swift in Sources */,
 				2D65555928BE37B800E288B0 /* UIStackView+Extension.swift in Sources */,
+				2DF1829D28C5D0E9002F5641 /* UIFont+Extension.swift in Sources */,
 				2DF1829B28C5C639002F5641 /* Bundle+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
