@@ -9,9 +9,19 @@ import Foundation
 
 final class NetworkService {
     static let shared = NetworkService()
+    var baseURL = URLComponents(string: "http://api.openweathermap.org/data/2.5/weather?")
+    
     
     public func getWeatherInfo(cityName: String) async throws -> WeatherEntity {
-        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?appid=ced6196732a06c7485c1feb058bc28c1&lang=kr&q=\(cityName)&units=metric") else { throw NetworkError.pathErr }
+        
+        let queryItems = [URLQueryItem(name: "q", value: "\(cityName)"),
+                          URLQueryItem(name: "appid", value: "ced6196732a06c7485c1feb058bc28c1"),
+                          URLQueryItem(name: "lang", value: "kr"),
+                          URLQueryItem(name: "units", value: "metric")]
+        
+        baseURL?.queryItems = queryItems
+        
+        guard let url = baseURL?.url else { throw NetworkError.pathErr }
         
         let (data, response) = try await URLSession.shared.data(from: url)
         
