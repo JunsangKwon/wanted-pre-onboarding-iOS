@@ -7,8 +7,8 @@
 
 import UIKit.UIView
 
-public class Spacer: UIView {
-    public init (_ width: CGFloat) {
+final class Spacer: UIView {
+    init (_ width: CGFloat) {
         super.init(frame: .zero)
 
         self.translatesAutoresizingMaskIntoConstraints = false

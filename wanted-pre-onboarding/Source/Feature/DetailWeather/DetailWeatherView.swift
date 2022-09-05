@@ -9,9 +9,9 @@ import UIKit
 
 final class DetailWeatherView: UIView {
     
-    var weatherInfo: WeatherEntity
+    private var weatherInfo: WeatherEntity
     
-    let mainStackView: UIStackView = {
+    private let mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -20,7 +20,7 @@ final class DetailWeatherView: UIView {
         return stackView
     }()
     
-    lazy var cityNameLabel: UILabel = {
+    private lazy var cityNameLabel: UILabel = {
         let label = UILabel()
         label.text = weatherInfo.koreaName
         label.textColor = .black
@@ -29,7 +29,7 @@ final class DetailWeatherView: UIView {
         return label
     }()
     
-    lazy var descriptionLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = weatherInfo.description
         label.textColor = .black
@@ -38,12 +38,12 @@ final class DetailWeatherView: UIView {
         return label
     }()
     
-    lazy var weatherIconImageView: UIImageView = {
+    private lazy var weatherIconImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
     
-    lazy var temperatureLabel: UILabel = {
+    private lazy var temperatureLabel: UILabel = {
         let label = UILabel()
         label.text = "\(weatherInfo.temp)°"
         label.textColor = .black
@@ -52,7 +52,7 @@ final class DetailWeatherView: UIView {
         return label
     }()
     
-    let temparatureStackView: UIStackView = {
+    private let temparatureStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
@@ -61,7 +61,7 @@ final class DetailWeatherView: UIView {
         return stackView
     }()
     
-    let maxTemperatureLabel: UILabel = {
+    private let maxTemperatureLabel: UILabel = {
         let label = UILabel()
         label.text = "최고 :"
         label.textColor = .black
@@ -70,7 +70,7 @@ final class DetailWeatherView: UIView {
         return label
     }()
     
-    lazy var maxTemperatureValueLabel: UILabel = {
+    private lazy var maxTemperatureValueLabel: UILabel = {
         let label = UILabel()
         label.text = "\(weatherInfo.maxTemp)°"
         label.textColor = .black
@@ -79,7 +79,7 @@ final class DetailWeatherView: UIView {
         return label
     }()
     
-    let minTemperatureLabel: UILabel = {
+    private let minTemperatureLabel: UILabel = {
         let label = UILabel()
         label.text = "최저 :"
         label.textColor = .black
@@ -88,7 +88,7 @@ final class DetailWeatherView: UIView {
         return label
     }()
     
-    lazy var minTemperatureValueLabel: UILabel = {
+    private lazy var minTemperatureValueLabel: UILabel = {
         let label = UILabel()
         label.text = "\(weatherInfo.minTemp)°"
         label.textColor = .black
@@ -97,7 +97,7 @@ final class DetailWeatherView: UIView {
         return label
     }()
     
-    let extraInfoView: UIView = {
+    private let extraInfoView: UIView = {
         let view = UIView()
         view.backgroundColor = .secondarySystemBackground
         view.clipsToBounds = true
@@ -105,7 +105,7 @@ final class DetailWeatherView: UIView {
         return view
     }()
     
-    let detailInfoStackView: UIStackView = {
+    private let detailInfoStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
@@ -114,27 +114,27 @@ final class DetailWeatherView: UIView {
         return stackView
     }()
     
-    lazy var feelLikeInfoView: DetailInfoView = {
+    private lazy var feelLikeInfoView: DetailInfoView = {
         let infoView = DetailInfoView(title: "체감온도", info: "\(weatherInfo.feelLikeTemp)°")
         return infoView
     }()
     
-    lazy var airPressureInfoView: DetailInfoView = {
+    private lazy var airPressureInfoView: DetailInfoView = {
         let infoView = DetailInfoView(title: "기압", info:"\(weatherInfo.pressure)hPa")
         return infoView
     }()
     
-    lazy var humidityInfoView: DetailInfoView = {
+    private lazy var humidityInfoView: DetailInfoView = {
         let infoView = DetailInfoView(title: "습도", info: "\(weatherInfo.humidity)%")
         return infoView
     }()
     
-    lazy var windSpeedInfoView: DetailInfoView = {
+    private lazy var windSpeedInfoView: DetailInfoView = {
         let infoView = DetailInfoView(title: "풍속", info: "\(weatherInfo.windSpeed)m/s")
         return infoView
     }()
     
-    public init(weatherInfo: WeatherEntity) {
+    init(weatherInfo: WeatherEntity) {
         self.weatherInfo = weatherInfo
         super.init(frame: .zero)
         setLayouts()

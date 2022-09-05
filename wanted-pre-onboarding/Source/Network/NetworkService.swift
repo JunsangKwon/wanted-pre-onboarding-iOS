@@ -12,7 +12,7 @@ final class NetworkService {
     var baseURL = URLComponents(string: "http://api.openweathermap.org/data/2.5/weather?")
     
     
-    public func getWeatherInfo(cityName: String) async throws -> WeatherEntity {
+    func getWeatherInfo(cityName: String) async throws -> WeatherEntity {
         
         let queryItems = [URLQueryItem(name: "q", value: "\(cityName)"),
                           URLQueryItem(name: "appid", value: "\(Bundle.main.API_KEY)"),

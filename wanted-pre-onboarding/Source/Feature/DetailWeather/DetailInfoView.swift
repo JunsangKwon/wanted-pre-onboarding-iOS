@@ -9,7 +9,7 @@ import UIKit
 
 class DetailInfoView: UIView {
     
-    let stackView: UIStackView = {
+    private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -18,7 +18,7 @@ class DetailInfoView: UIView {
         return stackView
     }()
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
@@ -26,7 +26,7 @@ class DetailInfoView: UIView {
         return label
     }()
     
-    let infoLabel: UILabel = {
+    private let infoLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
@@ -34,7 +34,7 @@ class DetailInfoView: UIView {
         return label
     }()
     
-    public init(title: String, info: String) {
+    init(title: String, info: String) {
         titleLabel.text = title
         infoLabel.text = info
         super.init(frame: .zero)

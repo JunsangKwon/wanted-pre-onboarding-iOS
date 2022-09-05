@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseNavigationController: UINavigationController {
+final class BaseNavigationController: UINavigationController {
         
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -18,7 +18,7 @@ class BaseNavigationController: UINavigationController {
         return label
     }()
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarAppearance()
     }
@@ -45,7 +45,7 @@ class BaseNavigationController: UINavigationController {
 
 extension BaseNavigationController {
     
-    public override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         super.pushViewController(viewController, animated: animated)
         setNavigationBarItem()
     }

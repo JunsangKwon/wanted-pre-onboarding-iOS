@@ -25,7 +25,7 @@ final class CityWeatherView: UIView {
         return collectionView
     }()
     
-    override public init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setLayouts()
     }

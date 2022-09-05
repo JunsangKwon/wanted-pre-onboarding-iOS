@@ -9,8 +9,8 @@ import UIKit
 
 final class DetailWeatherViewController: UIViewController {
     
-    var weatherInfo: WeatherEntity
-    lazy var detailWeatherView = DetailWeatherView(weatherInfo: self.weatherInfo)
+    private var weatherInfo: WeatherEntity
+    private lazy var detailWeatherView = DetailWeatherView(weatherInfo: weatherInfo)
     
     init(weatherInfo: WeatherEntity){
         self.weatherInfo = weatherInfo

@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CityWeatherCollectionViewCell: UICollectionViewCell {
+final class CityWeatherCollectionViewCell: UICollectionViewCell {
 
-    let cityNameLabel: UILabel = {
+    private let cityNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .left
@@ -19,11 +19,10 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
     
     let weatherIconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "unknown")
         return imageView
     }()
     
-    let leftStackView: UIStackView = {
+    private let leftStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .leading
@@ -31,7 +30,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    let temperatureLabel: UILabel = {
+    private let temperatureLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
@@ -39,13 +38,13 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let humidityImageView: UIImageView = {
+    private let humidityImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "humidity")
         return imageView
     }()
     
-    let humidityLabel: UILabel = {
+    private let humidityLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
@@ -53,7 +52,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let rightStackView: UIStackView = {
+    private let rightStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .trailing
@@ -61,7 +60,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         return stackView
     }()
     
-    let humidStackView: UIStackView = {
+    private let humidStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
@@ -88,7 +87,7 @@ class CityWeatherCollectionViewCell: UICollectionViewCell {
         humidityLabel.text = ""
     }
     
-    public func setData(info: WeatherEntity) {
+    func setData(info: WeatherEntity) {
         cityNameLabel.text = info.koreaName
         temperatureLabel.text = "\(info.temp)°C"
         humidityLabel.text = "\(info.humidity)%"
