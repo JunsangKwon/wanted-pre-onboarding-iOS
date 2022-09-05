@@ -15,7 +15,7 @@ final class NetworkService {
     public func getWeatherInfo(cityName: String) async throws -> WeatherEntity {
         
         let queryItems = [URLQueryItem(name: "q", value: "\(cityName)"),
-                          URLQueryItem(name: "appid", value: "ced6196732a06c7485c1feb058bc28c1"),
+                          URLQueryItem(name: "appid", value: "\(Bundle.main.API_KEY)"),
                           URLQueryItem(name: "lang", value: "kr"),
                           URLQueryItem(name: "units", value: "metric")]
         
