@@ -100,8 +100,10 @@ final class CityWeatherCollectionViewCell: UICollectionViewCell {
     }
     
     private func setProperties() {
-        self.backgroundColor = .secondarySystemBackground
+        self.backgroundColor = .systemBackground
         self.layer.cornerRadius = 10
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.systemGray3.cgColor
         self.clipsToBounds = true
     }
 
