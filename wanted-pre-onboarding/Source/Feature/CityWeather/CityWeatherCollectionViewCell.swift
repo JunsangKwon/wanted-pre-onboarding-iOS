@@ -121,7 +121,7 @@ final class CityWeatherCollectionViewCell: UICollectionViewCell {
     }
 
     private func setConstraints() {
-        [leftStackView, rightStackView].forEach {
+        [leftStackView, rightStackView, weatherIconImageView, humidityImageView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         

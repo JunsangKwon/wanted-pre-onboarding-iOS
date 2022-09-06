@@ -160,10 +160,21 @@ final class DetailWeatherView: UIView {
     
     private func setViewHierarchy() {
         addSubviews(mainStackView, extraInfoView)
-        mainStackView.addArrangedSubviews(cityNameLabel,descriptionLabel, weatherIconImageView, temperatureLabel, temparatureStackView)
-        temparatureStackView.addArrangedSubviews(maxTemperatureLabel, maxTemperatureValueLabel, Spacer(10), minTemperatureLabel, minTemperatureValueLabel)
+        mainStackView.addArrangedSubviews(cityNameLabel,
+                                          descriptionLabel,
+                                          weatherIconImageView,
+                                          temperatureLabel,
+                                          temparatureStackView)
+        temparatureStackView.addArrangedSubviews(maxTemperatureLabel,
+                                                 maxTemperatureValueLabel,
+                                                 Spacer(10),
+                                                 minTemperatureLabel,
+                                                 minTemperatureValueLabel)
         extraInfoView.addSubview(detailInfoStackView)
-        detailInfoStackView.addArrangedSubviews(feelLikeInfoView, airPressureInfoView, humidityInfoView, windSpeedInfoView)
+        detailInfoStackView.addArrangedSubviews(feelLikeInfoView,
+                                                airPressureInfoView,
+                                                humidityInfoView,
+                                                windSpeedInfoView)
     }
 
     private func setConstraints() {
