@@ -23,6 +23,11 @@ final class BaseNavigationController: UINavigationController {
         setNavigationBarAppearance()
     }
     
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        super.pushViewController(viewController, animated: animated)
+        setNavigationBarItem()
+    }
+    
     private var backButtonImage: UIImage? {
         return UIImage(systemName: "arrow.backward")?.withAlignmentRectInsets(UIEdgeInsets(top: 0.0, left: -12.0, bottom: 5.0, right: 0.0))
     }
@@ -40,16 +45,7 @@ final class BaseNavigationController: UINavigationController {
         navigationBar.scrollEdgeAppearance = appearance
         navigationBar.compactAppearance = appearance
     }
-}
-
-
-extension BaseNavigationController {
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        super.pushViewController(viewController, animated: animated)
-        setNavigationBarItem()
-    }
-
     private func setNavigationBarItem() {
         if viewControllers.count == 1 {
             navigationBar.topItem?.setLeftBarButton(UIBarButtonItem(customView: titleLabel),
